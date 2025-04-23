@@ -1,3 +1,5 @@
+require('dotenv').config();
+const mongoose = require('mongoose');
 const Movie = require('../models/movie.model');
 const User = require('../models/user.model');
 const bcrypt = require('bcryptjs');
@@ -111,6 +113,12 @@ const adminUser = {
 // Seed function
 async function seedDatabase() {
   try {
+    // Connect to MongoDB
+    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/movieapp';
+    console.log('Connecting to MongoDB...');
+    await mongoose.connect(mongoURI);
+    console.log('MongoDB connected successfully');
+    
     // Clear existing data
     await Movie.deleteMany({});
     await User.deleteMany({});
@@ -130,8 +138,17 @@ async function seedDatabase() {
     
     console.log('Admin user created successfully');
     console.log('Database seeded successfully');
+    
+    // Close the connection
+    await mongoose.connection.close();
+    console.log('MongoDB connection closed');
   } catch (error) {
     console.error('Error seeding database:', error);
+    // Ensure connection is closed even if there's an error
+    if (mongoose.connection.readyState !== 0) {
+      await mongoose.connection.close();
+      console.log('MongoDB connection closed after error');
+    }
   }
 }
 

@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 });
 
 // MongoDB Connection
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/movieapp')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/movieapp')
   .then(() => {
     console.log('MongoDB connected');
     app.listen(PORT, () => {
