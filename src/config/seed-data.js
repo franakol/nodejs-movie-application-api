@@ -40,7 +40,7 @@ const movies = [
         profilePicture: 'https://example.com/finn.jpg'
       }
     ],
-    director: 'The Duffer Brothers',
+    director: 'Igitangaza EMMY',
     featured: true
   },
   {
