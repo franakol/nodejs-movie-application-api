@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/movieapp')
   .then(() => {
-    console.log('MongoDB connected');
+    console.log('MongoDB connected well');
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
