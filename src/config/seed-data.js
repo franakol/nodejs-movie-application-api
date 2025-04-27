@@ -12,7 +12,7 @@ const movies = [
     imageUrl: 'https://example.com/stranger-things.jpg',
     trailerUrl: 'https://example.com/stranger-things-trailer',
     year: 2016,
-    genre: ['Sci-Fi', 'Horror', 'Drama'],
+    genre: ['Sci-Fi', 'Horror', 'Drama','Supernatural'],
     duration: '50m',
     rating: 8.7,
     isSeries: true,
