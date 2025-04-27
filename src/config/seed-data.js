@@ -21,7 +21,7 @@ const movies = [
       {
         title: 'Chapter One: The Vanishing of Will Byers',
         description: 'On his way home from a friend\'s house, young Will sees something terrifying. Nearby, a sinister secret lurks in the depths of a government lab.',
-        duration: '50m',
+        duration: '51min',
         thumbnailUrl: 'https://example.com/st-s01e01.jpg',
         videoUrl: 'https://example.com/st-s01e01',
         season: 1,
